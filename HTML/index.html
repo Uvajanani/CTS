@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap');
+
+    nav {
+        background-color: #f1f7fd;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    nav a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 20px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: white;
+        color: #357ABD;
+    }
+
+
+    .highlight {
+        color: yellow;
+        font-weight: 600;
+        font-size: 26px;
+    }
+
+    caption {
+        background: linear-gradient(to right, #dbe2e8, #d5ecfc);;
+        font-weight: 600;
+        font-size: 28px;
+        padding: 10px 0 30px 0;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    table {
+        margin: auto;
+        border-collapse: separate;
+        border-spacing: 15px;
+    }
+
+    #registrationForm h2 {
+        text-align: center;
+        color: #357ABD;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 1px solid #c5d6ea;
+        border-radius: 8px;
+        background-color: #f0f8ff;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea{
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #999;
+        box-sizing: border-box;
+    }
+
+    .fee {
+        margin-top: 8px;
+        padding: 8px 0;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus, .fee {
+        outline: #357ABD;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 70px;
+    }
+
+
+    output {
+        display: block;
+        margin-top: 20px;
+        font-weight: bold;
+        color: green;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    small {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      color: red;
+    }
+</style>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#registrationForm">Contact</a>
+            <a href="help.html" target="_blank">Help</a>
+        </ul>
+    </nav>
+
+
+    <!-- Main -->
+    <main>
+        <section id="home">
+            <div id="welcomeBanner">
+                <h4>Hello! Welcome to the <span class="highlight">Local Community</span> Event Portal</h4>
+                <span style="color: rgb(136, 26, 26); font-weight: bold; font-size: 20px;">Special offer - Register early and grab 50% off!</span>
+            </div>
+        </section>
+
+        <section id="events">
+           <table class="events-table">
+                <caption>Community Event Highlights</caption>
+                <tr>
+                    <td class="eventCard"><img src="img1.png" ondblclick="enlargeImage(this)" alt="Music Night" title="Music Night" width="300px" height="200px"></td>
+                    <td class="eventCard"><img src="img2.png" ondblclick="enlargeImage(this)" alt="Food Fest" title="Food Fest" width="300px" height="200px"></td>
+                    <td class="eventCard"><img src="img3.jpg" ondblclick="enlargeImage(this)" alt="Charity Run" title="Charity Run" width="300px" height="200px"></td>
+                </tr>   
+        
+                <tr>
+                    <td class="eventCard"><img src="img4.png" ondblclick="enlargeImage(this)" alt="Book Fair" title="Book Fair" width="300px" height="200px"></td>
+                    <td class="eventCard"><img src="img5.jpg" ondblclick="enlargeImage(this)" alt="Craft Workshop" title="Craft Workshop" width="300px" height="200px"></td>
+                    <td class="eventCard"><img src="img6.png" ondblclick="enlargeImage(this)" alt="Open Mic" title="Open Mic" width="300px" height="200px"></td>
+                </tr>
+           </table>
+        </section>
+
+        <section id="promo">
+            <h2>Event Promo Video</h2>
+            <div style="text-align: center; padding: 20px;">
+                <video id="promoVideo" width="640" height="360" controls oncanplay="videoReady()">
+                    <source src="event_promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p id="videoStatus" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+            </div>
+        </section>
+
+        <section id="#register">
+            <form id="registrationForm">
+                <h3 style="color: #357ABD; text-align: center; margin: 20px; font-size: 20px;">Event Registration</h3>
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required autofocus/>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="user@gmail.com" required/>
+
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter valid phone number" onblur="validatePhone()" required />
+                <small id="phoneError"></small>
+                
+                <label for="date">Event Date</label>
+                <input type="date" id="date" name="date" required />
+
+                <label for="eventType">Event Type</label>
+                <select id="eventType" name="eventType" required>
+                    <option value="" disabled selected>Select an event</option>
+                    <option value="music">Music Night</option>
+                    <option value="food">Food Fest</option>
+                    <option value="charity">Charity Run</option>
+                    <option value="book">Book Fair</option>
+                    <option value="craft">Craft Workshop</option>
+                    <option value="mic">Open Mic</option>
+                </select>
+
+                <p class="fee"><strong>Event Fee:</strong> <span id="eventFee">-</span></p>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write the feedback or any questions?"></textarea>
+                <small id="charCount"></small>
+
+                <button type="submit">Register</button>
+                <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+
+                <output id="confirmation"></output>
+            </form>
+        </section>
+
+        <section id="location" style="text-align: center; margin: 40px 0;">
+            <h2 style="color: #357ABD;">Find Events Near You</h2>
+            <button onclick="findNearbyEvents()">Find Nearby Events</button>
+            <p id="locationOutput" style="margin-top: 10px; color: green; font-weight: bold;"></p>
+        </section>
+
+        <section class="bulletin">
+            <h2>Community</h2>
+            <p>The city council is hosting several new initiatives this summer... Residents are encouraged to participate in cleanup drives, public forums... Local artists will also be featured in community mural projects... More events and updates will be posted weekly. Come join with us to clelebrate the unity...</p>
+        </section>
+        
+        <div id="spinner" style="display:none;">Loading...</div>
+        <input type="text" id="searchInput" placeholder="Search events..." />
+        <div id="events-container"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Local Community. All Rights Reserved</p>
+    </footer>
+</body>
+
+<script src="../JavaScript/script.js"></script>
+
+<script>
+    
+
+    function enlargeImage(img) {
+      if (img.style.width === "500px") {
+        img.style.width = "300px";
+        img.style.height = "200px";
+      } else {
+        img.style.width = "500px";
+        img.style.height = "330px";
+      }
+    }
+
+    const messageBox = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+
+    messageBox.addEventListener('keyup', () => {
+      charCount.textContent = `${messageBox.value.length} characters`;
+    });
+
+    function videoReady() {
+        document.getElementById("videoStatus").textContent = "Video ready to play!";
+    }
+
+    window.onbeforeunload = function (e) {
+        if (!formSubmitted) {
+            return "You have unsaved changes. Are you sure you want to leave?";
+        }
+    };
+
+    eventType.addEventListener("change", function () {
+        localStorage.setItem("preferredEventType", eventType.value);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const savedType = localStorage.getItem("preferredEventType");
+        if (savedType) {
+            eventType.value = savedType;
+
+            const event = new Event("change");
+            eventType.dispatchEvent(event);
+        }
+    });
+
+    function clearPreferences() {
+        localStorage.clear();
+        sessionStorage.clear();
+
+        eventType.value = "";
+        eventFee.textContent = "-";
+    }
+
+    function findNearbyEvents() {
+        const output = document.getElementById("locationOutput");
+
+        if (!navigator.geolocation) {
+            output.textContent = "Geolocation is not supported by your browser.";
+            return;
+        }
+
+        output.textContent = "Locating…";
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                output.textContent = `Your Location: Latitude ${latitude.toFixed(4)}, Longitude ${longitude.toFixed(4)}`;
+            },
+        
+            (error) => {
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        output.textContent = "Permission denied. Please allow location access.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        output.textContent = "Location information is unavailable.";
+                        break;
+                    case error.TIMEOUT:
+                        output.textContent = "Location request timed out.";
+                        break;
+                    default:
+                        output.textContent = "An unknown error occurred.";
+                }
+            },
+            options
+        );
+    }
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#registerBtn').click(function () {
+      $('#eventCard').fadeIn(500);
+
+      setTimeout(() => {
+        $('#eventCard').fadeOut(500);
+      }, 2000);
+    });
+  });
+</script>
+
+</html>
+

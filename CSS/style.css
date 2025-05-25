@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap");
+
+/* Universal selector */
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  background-image: url("./city.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Element selector */
+h2 {
+  background: linear-gradient(to right, #dbe2e8, #d5ecfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 28px;
+  font-style: bold;
+  text-align: center;
+  margin: 30px 0;
+  letter-spacing: normal;
+  text-transform: capitalize;
+}
+
+nav ul a:link {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+nav ul a:visited {
+  color: #555555;
+}
+
+nav ul a:hover {
+  color: #005fa3;
+}
+
+nav ul a:active {
+  color: #cc0000;
+}
+
+ul,
+ol {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.events-table {
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.events-table td {
+  padding: 10px;
+}
+
+/* Zebra striping */
+.events-table tbody tr:nth-child(even) {
+  background-color: #e6f0ff;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 400px;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu li {
+  margin: 0;
+  padding: 10px;
+}
+
+/* ID selector */
+#welcomeBanner {
+  background-color: rgb(191, 191, 228);
+  color: white;
+  text-align: center;
+  padding: 70px;
+  font-size: 24px;
+}
+
+/* Class selector */
+.eventCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  background-color: #f9f9f9;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #007BFF;   
+  border: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+
+.bulletin p {
+  column-count: 2;                   
+  column-gap: 30px;                   
+  column-rule: 1px solid gray;    
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin: 2px 50px 20px 50px;
+}
+
+
+/* Grouping selector */
+h3,
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ddd;
+  font-size: 12px;
+}
+
+/* Buttons */
+button {
+  margin: 20px auto 0 auto;
+  display: block;
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Hover effect for button */
+button:hover {
+  background-color: #357abd;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .nav-menu li {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  body, p, h2, h3 {
+    font-size: 90%;
+  }
+
+  #welcomeBanner {
+    padding: 30px;
+    font-size: 18px;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .bulletin p {
+    column-count: 1;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .events-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
