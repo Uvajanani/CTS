@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Display & Visibility - Exercise 14.1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .box {
+      border: 2px solid #333;
+      padding: 20px;
+      margin: 10px 0;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container my-5">
+    <h1>Display & Visibility Utilities</h1>
+
+    <div class="box d-none d-md-block">
+      Visible on md (≥768px) and larger, hidden on smaller screens
+    </div>
+
+    <div class="box d-none d-lg-flex justify-content-center align-items-center" style="height: 100px;">
+      Visible on lg (≥992px) and larger as flex container, hidden on smaller
+    </div>
+
+    <div class="box d-block d-md-none">
+      Visible only on small screens (&lt;768px)
+    </div>
+  </div>
+
+</body>
+</html>
