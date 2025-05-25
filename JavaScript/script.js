@@ -2,9 +2,9 @@
 
 console.log("Welcome to the Community Portal");
 
-// window.onload = function() {
-//     alert("Page fully loaded. Welcome!");
-// };
+window.onload = function() {
+    alert("Page fully loaded. Welcome!");
+};
 
 // Qn2. Syntax, Data Types, and Operators
 
